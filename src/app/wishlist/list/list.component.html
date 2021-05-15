@@ -20,12 +20,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let person of wishlist">
+                    <tr *ngFor="let person of  wishlist">
                         <td>{{ person.id }}</td>
                         <td>{{ person.name }}</td>
                         <td>
-                            <button> Edit</button>
-                            <button> Delete</button>
+                            <button [routerLink]=" ['/'+ person.id]" routerLinkActive="router-link-active"
+                                title="Edit">
+                                Edit
+                            </button>
+                            <button (click)="onDeleteWish(person.id)" title="Delete"> Delete</button>
                         </td>
                     </tr>
                 </tbody>

@@ -8,7 +8,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 const routes: Routes = [
   { path: '', component: ListComponent },
   { path: 'add', component: CreateEditComponent },
-  { path: 'edit/:id', component: CreateEditComponent },
+  { path: ':id', component: CreateEditComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
 
   //Use Component For Page Not Found
