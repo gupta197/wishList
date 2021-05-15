@@ -53,17 +53,19 @@ export class ListComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         let wishes = this.WishService.wishlist
-        let index = 0
+        let newArray = []
         if (wishes.length) {
           for (let index = 0; index < wishes.length; index++) {
             const element = wishes[index];
-            if (element.id == id) {
-              index = index + 1
+            if (element.id != id) {
+              // indexId = index
+              newArray.push(element)
             }
           }
         }
-        this.WishService.wishlist = wishes
-        this.wishlist = wishes
+        this.WishService.wishlist = newArray
+        this.wishlist = newArray
+        
         Swal.fire(
           'Deleted!',
           'Your Wish has been deleted from the Wishlist.',
