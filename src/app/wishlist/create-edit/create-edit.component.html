@@ -1,1 +1,29 @@
-<p>create-edit works!</p>
+<div class="conatiner-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>
+                {{ label}} Wishlist
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="wishlistForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="Name">Name : </label>
+                        <input type="text" formControlName="name" [ngClass]="{red: wishlistForm.get('name').touched}" />
+                        <span *ngIf="wishlistForm.get('name').touched " class="text-danger">
+                            Please enter wishlist name
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-success" type="submit">Submt</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

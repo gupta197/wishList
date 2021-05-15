@@ -1,1 +1,36 @@
-<p>list works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <p class="pb-2 mx-1 py-2 px-2 mr-2">
+                Wishlist
+                <button class="btn btn-default" [routerLink]="['/add']"
+                    routerLinkActive="router-link-active">NEW</button>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let person of wishlist">
+                        <td>{{ person.id }}</td>
+                        <td>{{ person.name }}</td>
+                        <td>
+                            <button> Edit</button>
+                            <button> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
