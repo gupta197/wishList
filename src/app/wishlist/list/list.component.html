@@ -19,7 +19,7 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngIf="wishlist.length > 0">
                     <tr *ngFor="let person of  wishlist">
                         <td>{{ person.id }}</td>
                         <td>{{ person.name }}</td>
@@ -29,6 +29,13 @@
                                 Edit
                             </button>
                             <button (click)="onDeleteWish(person.id)" title="Delete"> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="wishlist.length == 0">
+                    <tr>
+                        <td>
+                            No Record Found
                         </td>
                     </tr>
                 </tbody>
